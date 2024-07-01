@@ -1,6 +1,10 @@
+import { CategoryEntity } from 'src/category/entities/category.entity';
+
 export class CreateAdvertDto {
-    title: string;
-    description: string;
-    price: number;
-    nb_rooms: number;
+  title: string;
+  description: string;
+  price: number;
+  nb_rooms: number;
+  surface: number;
+  category: CategoryEntity;
 }

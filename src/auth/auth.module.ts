@@ -8,14 +8,14 @@ import { ConfigModule } from '@nestjs/config';
 import { JwtStrategy } from './strategy/passport-jwt.strategy';
 
 @Module({
-  imports:[
+  imports: [
     ConfigModule.forRoot(),
     UserModule,
     PassportModule.register({ defaultStrategy: 'jwt' }), // ADD
     JwtModule.register({
       secret: process.env.JWT_SECRET,
-      signOptions: { expiresIn: '1d' }
-  })
+      signOptions: { expiresIn: '1d' },
+    }),
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy], // ADD
